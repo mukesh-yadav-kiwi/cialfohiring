@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School</title>
+  <style>
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+
+  tr:nth-child(even) {
+      background-color: #dddddd;
+  }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Rank</th>
+      <th>Tuition Fees</th>
+      <th>Total Enrollment</th>
+    </tr>
+    <% @school.each do |row| %>
+      <tr>
+        <td><%= row["name"] %></td>
+        <td><%= row["rank"] %></td>
+        <td><%= row["tuition_fees"] %></td>
+        <td><%= row["total_enrollment"] %></td>
+      </tr>
+    <% end %>
+
+  </table>
+  <%= paginate @school %>
+
+</body>
+</html>
